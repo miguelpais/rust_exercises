@@ -50,18 +50,18 @@ impl<T: Clone> Stack<T> {
         if self.size <= 0 {
             return None;
         }
-        else if self.size == 1 {
-            let old_top = self.top.clone().unwrap();
+
+        let old_top = self.top.clone().unwrap();
+        let popped_value = Some(old_top.value);
+        if self.size == 1 {
             self.top = None;
-            self.size -= 1;
-            return Some(old_top.value);
         }
         else {
-            let old_top = self.top.clone().unwrap();
             let next_top = *old_top.next.clone().unwrap();
             self.top = Some(next_top);
-            self.size -= 1;
-            return Some(old_top.value);
-        }
+        };
+
+        self.size -= 1;
+        popped_value
     }
 }
