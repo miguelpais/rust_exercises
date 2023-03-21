@@ -1,5 +1,4 @@
-use super::operand::Operand;
-use super::operator::Operator;
+use super::{operand::Operand, operator::Operator};
 
 #[derive(Debug)]
 pub enum Term { OPERATOR(Operator), OPERAND(Operand) }
