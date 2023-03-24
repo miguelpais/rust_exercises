@@ -19,6 +19,6 @@ fn main() {
 
     let mut screen = Screen::new(40, 80);
 
-    screen.main_loop(60, 5, rx, lock_main_loop);
+    screen.main_loop(20, 5, rx, lock_main_loop);
     disable_raw_mode();
 }
