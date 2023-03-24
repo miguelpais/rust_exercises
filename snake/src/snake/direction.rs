@@ -9,10 +9,10 @@ pub enum Direction {
 impl Direction {
     pub fn to_string(&self) -> char {
         match self {
-            Direction::UP => '‖',
-            Direction::DOWN => '‖',
-            Direction::LEFT => '═',
-            Direction::RIGHT => '═',
+            Direction::UP => 'o',
+            Direction::DOWN => 'o',
+            Direction::LEFT => 'o',
+            Direction::RIGHT => 'o',
         }
     }
 }

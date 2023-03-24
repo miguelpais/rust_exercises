@@ -23,7 +23,7 @@ struct SnakeBody {
     length: usize,
 }
 
-const SNAKE_LENGTH: usize = 5;
+const SNAKE_LENGTH: usize = 10;
 
 impl SnakeBody {
     pub fn new(row_head: usize, column_head: usize) -> SnakeBody {
@@ -34,7 +34,7 @@ impl SnakeBody {
                 column: column_head + el * 2,
                 direction: Direction::LEFT
             }).collect(),
-            length: 5
+            length: SNAKE_LENGTH
         }
     }
 
