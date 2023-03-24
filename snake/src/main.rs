@@ -2,7 +2,7 @@ use std::sync::{Arc, mpsc, Mutex};
 use std::thread;
 
 mod snake;
-use crate::snake::{screen, input};
+use crate::snake::{screen::Screen, input};
 
 use crossterm::terminal::{disable_raw_mode};
 
@@ -14,9 +14,11 @@ fn main() {
     let (tx, rx) = mpsc::channel();
 
     thread::spawn(move || {
-        input::input_loop(tx, lock_input_loop);
+        input::input_loop(tx, lock_input_loop, 5);
     });
 
-    screen::main_loop(60, 10, rx, lock_main_loop);
+    let mut screen = Screen::new(40, 80);
+
+    screen.main_loop(60, 5, rx, lock_main_loop);
     disable_raw_mode();
 }
