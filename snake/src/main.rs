@@ -14,7 +14,7 @@ fn main() {
     let (tx, rx) = mpsc::channel();
 
     thread::spawn(move || {
-        input::input_loop(tx, lock_input_loop, 5);
+        input::input_loop(tx, lock_input_loop, 3);
     });
 
     let mut screen = Screen::new(40, 80);
